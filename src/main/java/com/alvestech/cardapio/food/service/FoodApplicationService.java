@@ -24,7 +24,6 @@ public class FoodApplicationService implements FoodService {
         log.info("[finish] FoodApplicationService - saveFood");
         return new FoodResponse(food);
     }
-
     @Override
     public FoodResponse findFoodById(UUID idFood) {
         log.info("[start] FoodApplicationService - findFoodById");
@@ -32,12 +31,19 @@ public class FoodApplicationService implements FoodService {
         log.info("[finish] FoodApplicationService - findFoodById");
         return new FoodResponse(food);
     }
-
     @Override
     public List<FoodResponse> findAllFoods() {
         log.info("[start] FoodApplicationService - findAllFoods");
         List<Food> foods = foodRepository.findAllFoods();
         log.info("[finish] FoodApplicationService - findAllFoods");
         return FoodResponse.converte(foods);
+    }
+    @Override
+    public void updateFood(UUID idFood, FoodRequest foodRequest) {
+        log.info("[start] FoodApplicationService - updateFood");
+        Food food = foodRepository.findFoodById(idFood);
+        food.update(foodRequest);
+        foodRepository.saveFood(food);
+        log.info("[finish] FoodApplicationService - updateFood");
     }
 }

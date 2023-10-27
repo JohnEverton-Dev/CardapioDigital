@@ -20,5 +20,8 @@ public interface FoodAPI {
     @GetMapping("/findAllFoods")
     @ResponseStatus(code = HttpStatus.OK)
     List<FoodResponse> findAllFoods();
-    
+
+    @PatchMapping("/update/{idFood}")
+    @ResponseStatus(code = HttpStatus.NO_CONTENT)
+    void updateFood (@PathVariable UUID idFood, @Valid @RequestBody FoodRequest foodRequest);
 }

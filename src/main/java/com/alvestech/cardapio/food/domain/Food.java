@@ -30,4 +30,10 @@ public class Food {
         this.imagemProduto = foodRequest.getImagemProduto();
         this.valorProduto = foodRequest.getValorProduto();
     }
+
+    public void update(FoodRequest foodRequest) {
+        this.nomeProduto = foodRequest.getNomeProduto();
+        this.imagemProduto = foodRequest.getImagemProduto();
+        this.valorProduto = foodRequest.getValorProduto();
+    }
 }

@@ -10,4 +10,5 @@ public interface FoodService {
     FoodResponse saveFood(FoodRequest foodRequest);
     FoodResponse findFoodById(UUID idFood);
     List<FoodResponse> findAllFoods();
+    void updateFood(UUID idFood, FoodRequest foodRequest);
 }
