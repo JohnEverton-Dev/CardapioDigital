@@ -35,11 +35,16 @@ public class FoodRestController implements FoodAPI {
         log.info("[finish] FoodRestController - findAllFoods");
         return foodResponses;
     }
-
     @Override
     public void updateFood(UUID idFood, FoodRequest foodRequest) {
         log.info("[start] FoodRestController - updateFood");
         foodService.updateFood(idFood, foodRequest);
         log.info("[finish] FoodRestController - updateFood");
+    }
+    @Override
+    public void deleteFood(UUID idFood) {
+        log.info("[start] FoodRestController - deleteFood");
+        foodService.deleteFood(idFood);
+        log.info("[finish] FoodRestController - deleteFood");
     }
 }

@@ -24,4 +24,8 @@ public interface FoodAPI {
     @PatchMapping("/update/{idFood}")
     @ResponseStatus(code = HttpStatus.NO_CONTENT)
     void updateFood (@PathVariable UUID idFood, @Valid @RequestBody FoodRequest foodRequest);
+
+    @DeleteMapping("/delete/{idFood}")
+    @ResponseStatus(code = HttpStatus.NO_CONTENT)
+    void deleteFood (@PathVariable UUID idFood);
 }

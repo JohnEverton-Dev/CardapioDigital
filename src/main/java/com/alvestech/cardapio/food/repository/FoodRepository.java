@@ -9,4 +9,5 @@ public interface FoodRepository {
     Food saveFood(Food food);
     Food findFoodById(UUID idFood);
     List<Food> findAllFoods();
+    void deleteFood(UUID idFood);
 }

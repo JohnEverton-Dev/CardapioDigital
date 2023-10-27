@@ -46,4 +46,11 @@ public class FoodApplicationService implements FoodService {
         foodRepository.saveFood(food);
         log.info("[finish] FoodApplicationService - updateFood");
     }
+    @Override
+    public void deleteFood(UUID idFood) {
+        log.info("[start] FoodApplicationService - deleteFood");
+        Food food = foodRepository.findFoodById(idFood);
+        foodRepository.deleteFood(food.getIdFood());
+        log.info("[finish] FoodApplicationService - deleteFood");
+    }
 }

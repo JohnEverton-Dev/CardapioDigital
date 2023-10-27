@@ -11,4 +11,5 @@ public interface FoodService {
     FoodResponse findFoodById(UUID idFood);
     List<FoodResponse> findAllFoods();
     void updateFood(UUID idFood, FoodRequest foodRequest);
+    void deleteFood(UUID idFood);
 }

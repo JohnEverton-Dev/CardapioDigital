@@ -40,4 +40,10 @@ public class FoodInfraRepository implements FoodRepository {
         log.info("[finish] FoodInfraRepository - findAllFoods");
         return foods;
     }
+    @Override
+    public void deleteFood(UUID idFood) {
+        log.info("[start] FoodInfraRepository - deleteFood");
+        foodSpringDataJPARepository.deleteById(idFood);
+        log.info("[finish] FoodInfraRepository - deleteFood");
+    }
 }
