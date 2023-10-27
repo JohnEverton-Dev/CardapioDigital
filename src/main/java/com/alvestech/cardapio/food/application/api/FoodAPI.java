@@ -4,6 +4,7 @@ import jakarta.validation.Valid;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
 import java.util.UUID;
 
 @RequestMapping("/v1/Food")
@@ -16,4 +17,8 @@ public interface FoodAPI {
     @ResponseStatus(code = HttpStatus.OK)
     FoodResponse findFoodById (@PathVariable UUID idFood);
 
+    @GetMapping("/findAllFoods")
+    @ResponseStatus(code = HttpStatus.OK)
+    List<FoodResponse> findAllFoods();
+    
 }

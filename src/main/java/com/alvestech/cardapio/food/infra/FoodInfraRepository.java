@@ -8,6 +8,7 @@ import lombok.extern.log4j.Log4j2;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Repository;
 
+import java.util.List;
 import java.util.Optional;
 import java.util.UUID;
 
@@ -31,5 +32,12 @@ public class FoodInfraRepository implements FoodRepository {
         Food food = optionalFood.orElseThrow(()-> APIException.build(HttpStatus.BAD_REQUEST, "ID INVÁLIDO!"));
         log.info("[finish] FoodInfraRepository - findFoodById");
         return food;
+    }
+    @Override
+    public List<Food> findAllFoods() {
+        log.info("[start] FoodInfraRepository - findAllFoods");
+        List<Food> foods = foodSpringDataJPARepository.findAll();
+        log.info("[finish] FoodInfraRepository - findAllFoods");
+        return foods;
     }
 }

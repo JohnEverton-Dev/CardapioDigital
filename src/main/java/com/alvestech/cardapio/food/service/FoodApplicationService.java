@@ -8,6 +8,7 @@ import lombok.RequiredArgsConstructor;
 import lombok.extern.log4j.Log4j2;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
 import java.util.UUID;
 
 @Service
@@ -30,5 +31,13 @@ public class FoodApplicationService implements FoodService {
         Food food = foodRepository.findFoodById(idFood);
         log.info("[finish] FoodApplicationService - findFoodById");
         return new FoodResponse(food);
+    }
+
+    @Override
+    public List<FoodResponse> findAllFoods() {
+        log.info("[start] FoodApplicationService - findAllFoods");
+        List<Food> foods = foodRepository.findAllFoods();
+        log.info("[finish] FoodApplicationService - findAllFoods");
+        return FoodResponse.converte(foods);
     }
 }
