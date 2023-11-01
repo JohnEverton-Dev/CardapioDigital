@@ -1,4 +1,4 @@
-package com.alvestech.cardapio.food.repository;
+package com.alvestech.cardapio.food.application.repository;
 
 import com.alvestech.cardapio.food.domain.Food;
 

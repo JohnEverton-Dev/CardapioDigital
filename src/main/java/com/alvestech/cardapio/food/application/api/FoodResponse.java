@@ -12,7 +12,7 @@ public class FoodResponse {
     UUID idFood;
     String nomeProduto;
     String imagemProduto;
-    Integer valorProduto;
+    Double valorProduto;
 
     public FoodResponse(Food food) {
         this.idFood = food.getIdFood();

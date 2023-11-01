@@ -23,17 +23,17 @@ public class Food {
     private UUID idFood;
     private String nomeProduto;
     private String imagemProduto;
-    private Integer valorProduto;
+    private Double valorProduto;
 
     public Food(FoodRequest foodRequest) {
         this.nomeProduto = foodRequest.getNomeProduto();
         this.imagemProduto = foodRequest.getImagemProduto();
-        this.valorProduto = foodRequest.getValorProduto();
+        this.valorProduto = Double.valueOf(foodRequest.getValorProduto());
     }
 
     public void update(FoodRequest foodRequest) {
         this.nomeProduto = foodRequest.getNomeProduto();
         this.imagemProduto = foodRequest.getImagemProduto();
-        this.valorProduto = foodRequest.getValorProduto();
+        this.valorProduto = Double.valueOf(foodRequest.getValorProduto());
     }
 }

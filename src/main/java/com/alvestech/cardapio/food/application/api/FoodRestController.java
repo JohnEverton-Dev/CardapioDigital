@@ -1,6 +1,6 @@
 package com.alvestech.cardapio.food.application.api;
 
-import com.alvestech.cardapio.food.service.FoodService;
+import com.alvestech.cardapio.food.application.service.FoodService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.log4j.Log4j2;
 import org.springframework.web.bind.annotation.RestController;

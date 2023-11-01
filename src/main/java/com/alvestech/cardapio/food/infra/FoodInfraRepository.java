@@ -1,7 +1,8 @@
 package com.alvestech.cardapio.food.infra;
 
+import com.alvestech.cardapio.food.application.api.FoodResponse;
 import com.alvestech.cardapio.food.domain.Food;
-import com.alvestech.cardapio.food.repository.FoodRepository;
+import com.alvestech.cardapio.food.application.repository.FoodRepository;
 import com.alvestech.cardapio.handler.APIException;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.log4j.Log4j2;

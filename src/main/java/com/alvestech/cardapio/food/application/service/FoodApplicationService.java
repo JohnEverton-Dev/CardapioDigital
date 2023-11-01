@@ -1,9 +1,9 @@
-package com.alvestech.cardapio.food.service;
+package com.alvestech.cardapio.food.application.service;
 
 import com.alvestech.cardapio.food.application.api.FoodRequest;
 import com.alvestech.cardapio.food.application.api.FoodResponse;
 import com.alvestech.cardapio.food.domain.Food;
-import com.alvestech.cardapio.food.repository.FoodRepository;
+import com.alvestech.cardapio.food.application.repository.FoodRepository;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.log4j.Log4j2;
 import org.springframework.stereotype.Service;
