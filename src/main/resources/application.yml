@@ -7,7 +7,7 @@ spring:
     driverClassName: org.postgresql.Driver
     url: jdbc:postgresql://localhost:5432/cardapio
     username: postgres
-    password: 852456
+    password: 1291301844
   jpa:
     generate-ddl: true
     properties:
