@@ -8,6 +8,7 @@ import lombok.extern.log4j.Log4j2;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Repository;
 
+import java.util.List;
 import java.util.Optional;
 import java.util.UUID;
 
@@ -26,12 +27,19 @@ public class ClienteInfraRepository implements ClienteRepository {
     }
     @Override
     public Cliente findClienteById(UUID idCliente) {
-        log.info("[start] ClienteInfraRepository - saveCliente");
+        log.info("[start] ClienteInfraRepository - findClienteById");
         Optional<Cliente> optionalCliente = clienteSpringDataJPARepository.findById(idCliente);
         Cliente cliente = optionalCliente
                 .orElseThrow(()-> APIException
                         .build(HttpStatus.BAD_REQUEST, "Cliente não encontrado!"));
-        log.info("[finish] ClienteInfraRepository - saveCliente");
+        log.info("[finish] ClienteInfraRepository - findClienteById");
         return cliente;
+    }
+    @Override
+    public List<Cliente> findAllClientes() {
+        log.info("[start] ClienteInfraRepository - findAllClientes");
+        List<Cliente> clientes = clienteSpringDataJPARepository.findAll();
+        log.info("[finish] ClienteInfraRepository - findAllClientes");
+        return clientes;
     }
 }

@@ -4,6 +4,7 @@ import jakarta.validation.Valid;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
 import java.util.UUID;
 
 @RequestMapping("/v1/Cliente")
@@ -15,4 +16,8 @@ public interface ClienteAPI {
     @GetMapping("/{idCliente}")
     @ResponseStatus(code = HttpStatus.OK)
     ClienteResponse findClienteById (@PathVariable UUID idCliente);
+
+    @GetMapping("/findAllClientes")
+    @ResponseStatus(code = HttpStatus.OK)
+    List<ClienteResponse> findAllClientes();
 }
