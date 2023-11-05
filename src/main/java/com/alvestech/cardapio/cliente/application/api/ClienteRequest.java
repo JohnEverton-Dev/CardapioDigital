@@ -5,6 +5,8 @@ import lombok.Value;
 
 @Value
 public class ClienteRequest {
+    @NotBlank(message = "Campo Obrigatório!")
     String nomeCliente;
+    @NotBlank(message = "Campo Obrigatório!")
     String celular;
 }
