@@ -23,8 +23,6 @@ public class Pedido {
     private UUID idPedido;
     @Enumerated(EnumType.STRING)
     private NumeroMesa numeroMesa;
-    private UUID idCliente;
-    private UUID idFood;
 
     @ManyToOne
     @JoinColumn(name = "cliente_id")

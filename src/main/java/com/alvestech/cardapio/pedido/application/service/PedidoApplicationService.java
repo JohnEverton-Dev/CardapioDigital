@@ -12,6 +12,9 @@ import lombok.RequiredArgsConstructor;
 import lombok.extern.log4j.Log4j2;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+import java.util.UUID;
+
 @Service
 @RequiredArgsConstructor
 @Log4j2
@@ -27,5 +30,19 @@ public class PedidoApplicationService implements PedidoService {
         Pedido pedido = pedidoRepository.savePedido(new Pedido(cliente, food, pedidoRequest));
         log.info("[finish] PedidoApplicationService - savePedido");
         return new PedidoResponse(pedido);
+    }
+    @Override
+    public PedidoResponse findPedidoById(UUID idPedido) {
+        log.info("[start] PedidoApplicationService - findPedidoById");
+        Pedido pedido = pedidoRepository.findPedidoById(idPedido);
+        log.info("[finish] PedidoApplicationService - findPedidoById");
+        return new PedidoResponse(pedido);
+    }
+    @Override
+    public List<PedidoResponse> findAllPedidos() {
+        log.info("[start] PedidoApplicationService - findAllPedidos");
+        List<Pedido> pedidos = pedidoRepository.findAllPedidos();
+        log.info("[finish] PedidoApplicationService - findAllPedidos");
+        return PedidoResponse.converte(pedidos);
     }
 }
